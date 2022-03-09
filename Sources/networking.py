@@ -45,18 +45,29 @@ class Network():
     def displayInterface(self):
 
         import time
+        from rich.text import Text
         from rich.live import Live
         from rich.table import Table
         from rich.console import Console
         interface=self.interface
-        table = Table(title="LIST OF NETWORK INTERFACES")
-        table.add_column("ID",width=5)
-        table.add_column("INTERFACE",width=12)
-        table.add_column("MAC",width=20)
-        table.add_column("IS CONNECTED",width=14)
-        table.add_column("IP",width=20)
-        table.add_column("SUBNET",width=20)
-        table.add_column("DEFAULT GATEWAY",width=20)
+        print("\033[38;5;207m")
+        iD=Text.from_ansi("\033[38;5;207mID")
+        inter = Text.from_ansi("\033[38;5;207mINTERFACE")
+        Mac = Text.from_ansi("\033[38;5;207mMAC")
+        IP = Text.from_ansi("\033[38;5;207mIP")
+        subnet = Text.from_ansi("\033[38;5;207mSUBNET")
+        deflt = Text.from_ansi("\033[38;5;207mDEFAULT GATEWAY")
+        CONNECTED = Text.from_ansi("\033[38;5;207mIS CONNECTED")
+        table = Table(title="\033[1m\033[38;5;93mLIST OF NETWORK INTERFACES",style="yellow")
+        table.add_column(iD,width=12,style="cyan")
+        table.add_column(inter,width=12,style="cyan")
+        table.add_column(Mac,width=20,style="cyan")
+        table.add_column(CONNECTED,width=20,style="cyan")
+        table.add_column(IP,width=14,style="cyan")
+        table.add_column(subnet,width=20,style="cyan")
+        table.add_column(deflt,width=20,style="cyan")
+        
+        
         Id=0
         console=Console(style="white on blue")  
         from time import sleep
@@ -87,17 +98,17 @@ class Network():
                 #print("Interface {} has MAC: {}".format(intrfc,MAC))
             console.print(table,justify='center')
             time.sleep(3)
-            
-           
+                      
     def changeMacAdd(self,newMac,interface):
         c = subprocess.check_output(["ifconfig",interface],stderr=subprocess.DEVNULL)
         c = c.decode("utf-8")
         pat = re.compile('\w{2}:\w{2}:\w{2}:\w{2}:\w{2}:\w{2}')
         op = pat.findall(c)
-        oldmac = op[0]
+        oldmac = str(op[0])
         subprocess.check_output(["ifconfig",interface,"down"],stderr=subprocess.DEVNULL)
         subprocess.check_output(["ifconfig",interface,"hw","ether",newMac],stderr=subprocess.DEVNULL)
         subprocess.check_output(["ifconfig",interface,"up"],stderr=subprocess.DEVNULL)
+        print("\033[38;5;39m\033[1m\n                              MAC address changes successfully from \033[38;5;9m\033[1m{} \033[38;5;39m\033[1m to  \033[38;5;9m\033[1m{}".format(oldmac,newMac))
     
     def showActiceInterfaces(self):
         pass

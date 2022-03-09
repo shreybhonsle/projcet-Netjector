@@ -9,6 +9,8 @@ main.header()
 main.aboutAuthor()  
 main.loadmodules()
 network = Network()
+from rich.console import Console
+console = Console()
 #Verifying installation 
 
 while True:
@@ -26,13 +28,14 @@ while True:
                 main.header()
                 network.refreshInterfaces()
                 network.displayInterface()
-                time.sleep(3)
+                time.sleep(5)
             elif Networkchoice == 2:
                 main.header()
                 network.displayInterface()
-                interface = str(input("                         Enter the name Interface to change MAC: "))
-                mac = str(input("                         Enter the new MAC address (NOTE THE FIRST OCTET MUST BE EVEN ie UNICAST): "))
+                interface = str(input("\033[38;5;190m\033[1m                              Enter the name Interface to change MAC: "))
+                mac = str(input("                              Enter the new MAC address: "))
                 network.changeMacAdd(mac,interface)
+                time.sleep(5)
             else:
                 break
                 

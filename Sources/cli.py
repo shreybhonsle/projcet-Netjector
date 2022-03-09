@@ -13,7 +13,6 @@ class cli():
     
     def aboutAuthor(self):
         from rich.text import Text
-        from rich.text import Text
         from rich.console import Console
         console= Console()
         above = Text.from_ansi("\033[38;5;164m[--]\033[38;5;15m \u0305 \u0305 \u0305 \u0305 \u0305 \u0305 \u0305 \u0305 \u0305 \u0305 \u0305 \u0305 \u0305 \u0305 \u0305 \u0305 \u0305 \u0305 \u0305 \u0305 \u0305 \u0305 \u0305 \u0305 \u0305 \u0305 \u0305 \u0305 \u0305 \u0305 \u0305 \u0305 \u0305 \u0305 \u0305 \u0305 \u0305 \u0305 \u0305 \033[38;5;164m[--]")
@@ -51,9 +50,8 @@ class cli():
 
     def showOptions(self):
 
-        print("\n\n                         1. Network Injection and Tools")
-        print("                         2. Post")
-
+        print("\n\n\033[38;5;178m                         1. Network Injection and Tools")
+        print("                         2. Post Exploitation Attack")
     
     def showNotesForInt(self):
         from rich.text import Text
