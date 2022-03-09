@@ -16,19 +16,17 @@ while True:
     main.aboutAuthor()
     main.showOptions()
     choice=int(input("\n\n                         Enter Your Choice : "))
-    if choice == 1:
-        main.header()
-        main.showOptions()
-        main.showNotesForInt()
-        network.displayInterface()
-        
-        while True:     
+    if choice == 1: 
+        while True: 
+            main.header()    
+            network.showNotesForInt() 
             network.showNetworkOptions()
-            Networkchoice=int(input("                         Enter Your Choice : "))
+            Networkchoice=int(input("\n\n\n                         Enter Your Choice : "))
             if Networkchoice == 1:
                 main.header()
                 network.refreshInterfaces()
                 network.displayInterface()
+                time.sleep(3)
             elif Networkchoice == 2:
                 main.header()
                 network.displayInterface()

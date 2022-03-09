@@ -35,16 +35,16 @@ class cli():
 
     def loadmodules(self):
         with Progress() as progress:
-            print("\033[0;0m")
-            task1 = progress.add_task("\033[1m\033[38;5;82m[cyan]Verifying Metasploit-framework :\033[0;0m", total=10)
-            task2 = progress.add_task("\033[1m\033[38;5;82m[cyan]Verifying fatrat installation  :\033[0;0m", total=10)
-            task3 = progress.add_task("\033[1m\033[38;5;82m[cyan]Loading modules                : \033[0;0m", total=10)
+            print("\n\n\033[0;0m")
+            task1 = progress.add_task("\033[1m\033[38;5;82m[cyan]                                Verifying Metasploit-framework :\033[0;0m", total=10)
+            task2 = progress.add_task("\033[1m\033[38;5;82m[cyan]                                Verifying fatrat installation  :\033[0;0m", total=10)
+            task3 = progress.add_task("\033[1m\033[38;5;82m[cyan]                                Loading modules                : \033[0;0m", total=10)
             import time
             progress.update(task1, advance=5)
             time.sleep(0.2)
             import os
             progress.update(task1, advance=5)
-            time.sleep(3)
+            time.sleep(1)
     
     def verifyInstallation(self):
         pass

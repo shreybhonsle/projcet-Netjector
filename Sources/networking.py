@@ -85,9 +85,10 @@ class Network():
             else:
                 table.add_row(str(Id),intrfc,MAC,str(isConnected),IP,SUBNET,defaultGateway)
                 #print("Interface {} has MAC: {}".format(intrfc,MAC))
-        console.print(table,justify='center')
+            console.print(table,justify='center')
+            time.sleep(3)
+            
            
-
     def changeMacAdd(self,newMac,interface):
         c = subprocess.check_output(["ifconfig",interface],stderr=subprocess.DEVNULL)
         c = c.decode("utf-8")
@@ -102,9 +103,9 @@ class Network():
         pass
 
     def showNetworkOptions(self):
-        print("                         1. Refresh Network Interface")
+        print("\n\n\033[38;5;13m                         1. Refresh Network Interface")
         print("                         2. Change Mac address of an interface")
-        print("                         EXIT")
+        print("                         9. EXIT")
 
     def showNotesForInt(self):
         from rich.text import Text
