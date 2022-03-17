@@ -1,12 +1,12 @@
-import subprocess
+import subprocess,sys
 from rich.progress import Progress
 from rich.console import Console
 class cli():
     def __init__(self):
         pass
+    
     def header(self):      
         print("\033[1m\033[38;5;154m")
-        #print("\033[48;5;236m\033[38;5;231mStack \033[38;5;208mAbuse\033[0;0m")
         subprocess.call("clear",shell=True)        
         subprocess.call("figlet -t -c -f slant.flf -k Netjector",shell=True)
         print("\033[0;0m\n")
@@ -74,4 +74,4 @@ class cli():
         console.print(Spacer,justify="center")
         console.print(plaint,justify="center")
         console.print(Divide,justify="center")
-        
+    

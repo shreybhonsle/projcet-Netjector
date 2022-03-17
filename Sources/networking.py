@@ -59,13 +59,13 @@ class Network():
         deflt = Text.from_ansi("\033[38;5;207mDEFAULT GATEWAY")
         CONNECTED = Text.from_ansi("\033[38;5;207mIS CONNECTED")
         table = Table(title="\033[1m\033[38;5;93mLIST OF NETWORK INTERFACES",style="yellow")
-        table.add_column(iD,width=12,style="cyan")
-        table.add_column(inter,width=12,style="cyan")
-        table.add_column(Mac,width=20,style="cyan")
-        table.add_column(CONNECTED,width=20,style="cyan")
+        table.add_column(iD,width=7,style="cyan")
+        table.add_column(inter,width=9,style="cyan")
+        table.add_column(Mac,width=18,style="cyan")
+        table.add_column(CONNECTED,width=15,style="cyan")
         table.add_column(IP,width=14,style="cyan")
-        table.add_column(subnet,width=20,style="cyan")
-        table.add_column(deflt,width=20,style="cyan")
+        table.add_column(subnet,width=14,style="cyan")
+        table.add_column(deflt,width=18,style="cyan")
         
         
         Id=0
