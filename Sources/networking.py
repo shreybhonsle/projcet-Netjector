@@ -116,6 +116,7 @@ class Network():
     def showNetworkOptions(self):
         print("\n\n\033[38;5;13m                         1. Refresh Network Interface")
         print("                         2. Change Mac address of an interface")
+        print("                         3. Discover the Clients on your network")
         print("                         9. EXIT")
 
     def showNotesForInt(self):
@@ -140,4 +141,6 @@ class Network():
         console.print(plaint,justify="center")
         console.print(Divide,justify="center")
         
-
+    def discoverClients(self,interface):
+        c = subprocess.check_output(["ifconfig",interface],stderr=subprocess.DEVNULL)
+                

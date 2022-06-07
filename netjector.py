@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import subprocess
 import sys
 sys.path.insert(0, '/root/Projects/Project-Netjector/Netjector/Sources')
@@ -69,6 +71,9 @@ while True:
                 mac = str(input("                              Enter the new MAC address: "))
                 network.changeMacAdd(mac,interface)
                 time.sleep(5)
+            elif Networkchoice == 3:
+                main.header()
+                
             else:
                 break
                 
